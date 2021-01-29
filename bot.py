@@ -1,6 +1,12 @@
 import discord
+import os
+from dotenv import load_dotenv
 from discord.ext import commands
-from Meme_generator.meme_generator import meme_output
+from meme_generator import meme_output
+
+load_dotenv()
+
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
 intents.members = True
