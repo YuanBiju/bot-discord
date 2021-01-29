@@ -1,13 +1,13 @@
 import cv2
 import os
 import numpy as np
-from image_request import img_request
-from image_converter import convert_image
+from .image_request import img_request
+from .image_converter import convert_image
 import json
 
 def mixer_output(key,member_url,mention_url):
     #reading json file for template points
-    with open('../data/meme_template.json','r') as read_file:
+    with open('data/meme_template.json','r') as read_file:
         data = json.load(read_file)
         r1 = data[key]['pos1']
         r2 = data[key]['pos2']
@@ -20,7 +20,7 @@ def mixer_output(key,member_url,mention_url):
     member_avatar_img = cv2.resize(member_avatar_img, (data[key]["avatars"]["size"]["avatar1"], data[key]["avatars"]["size"]["avatar2"]))
     
     image_file = data[key]['file_name']
-    meme_template = cv2.imread('../imgs/'+image_file,1)
+    meme_template = cv2.imread('imgs/'+image_file,1)
 
     #member image mixing
     rows,cols,channels = member_avatar_img.shape
@@ -47,7 +47,7 @@ def mixer_output(key,member_url,mention_url):
         mention_avatar_img = cv2.resize(mention_avatar_img, (data[key]["avatars"]["size"]["avatar1"], data[key]["avatars"]["size"]["avatar2"]))
     #mention image mixing
     if mention_url:
-        meme_template = cv2.imread('../imgs_temp/'+image_file,1)
+        meme_template = cv2.imread('imgs_temp/'+image_file,1)
         rows,cols,channels = mention_avatar_img.shape
         print(rows,cols)
         roi = meme_template[r4:r4+rows,r3:r3+cols]
