@@ -18,7 +18,7 @@
 * You must have python -v 3 and pip -v 3 installed in your system
 * Link to install python: https://www.python.org/downloads/
 
-* To install discord.py, opencv-python and requests use: ``` $ pip install discord.py, opencvpython, requests ```
+* To install discord.py, opencv-python and requests use: ``` $ pip install discord.py opencvpython requests ```
 
 * To run this project:
 ```
