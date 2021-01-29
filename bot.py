@@ -2,7 +2,7 @@ import discord
 import os
 from dotenv import load_dotenv
 from discord.ext import commands
-from meme_generator import meme_output
+from Meme_Generator.meme_generator import meme_output
 
 load_dotenv()
 
