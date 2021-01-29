@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from meme_generator import meme_output
+from Meme_generator_meme_generator import meme_output
 
 intents = discord.Intents.default()
 intents.members = True
