@@ -4,6 +4,7 @@
 * [General Info](#gen-info)
 * [Libraries used](#libs-used)
 * [Setup](#setup)
+* [Resources](#resources)
 
 ## General Info
 * A Discord bot used to generate memes, play songs etc.
@@ -25,4 +26,9 @@
 $ cd ../discord_bot
 $ python bot.py
 ```
+
+## Resources
+* Create basic discord bot: https://discordpy.readthedocs.io/en/latest/discord.html , https://www.freecodecamp.org/news/create-a-discord-bot-with-python/ , https://realpython.com/how-to-make-a-discord-bot-python/
+
+* discord.py docs : https://discordpy.readthedocs.io/en/latest/index.html
 
