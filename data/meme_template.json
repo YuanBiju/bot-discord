@@ -1,0 +1,41 @@
+{
+    "slap": {
+        "pos1": 336,
+        "pos2": 255,
+        "pos3": 143,
+        "pos4": 334,
+        "file_name": "73ca653a156e4ad90d2e80a49cd43ba2.jpg",
+        "avatars": {
+            "size": {
+                "avatar1": 100,
+                "avatar2": 100
+            }
+        }
+    },
+    "crotchkick": {
+        "pos1": 35,
+        "pos2": 4,
+        "pos3": 202,
+        "pos4": 5,
+        "file_name": "1wz0x7.jpg",
+        "avatars": {
+            "size": {
+                "avatar1": 64,
+                "avatar2": 64
+            }
+        }
+    },
+    "facekick": {
+        "pos1": 413,
+        "pos2": 180,
+        "pos3": 58,
+        "pos4": 114,
+        "file_name": "8lvi0.jpg",
+        "avatars": {
+            "size": {
+                "avatar1": 100,
+                "avatar2": 100
+            }
+        }
+    }
+}
