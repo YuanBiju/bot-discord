@@ -2,7 +2,7 @@
 
 ## Table of contents
 * [General Info](#gen-info)
-* [Libraries used](#libs-used)
+* [Libraries used](#libraries-used)
 * [Setup](#setup)
 * [Resources](#resources)
 * [Notes](#notes)
