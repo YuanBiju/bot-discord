@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from discord.ext import commands
 from Meme_Generator.meme_generator import meme_output
+from crypto.obtain_crypto import crypto_output
 
 load_dotenv()
 
@@ -31,8 +32,13 @@ async def on_ready():
     '''
 @client.command()
 async def info(ctx):
-    embed = discord.Embed(title=f"{ctx.guild.name}", description="Lorem Ipsum asdasd", color=discord.Color.blue())
-    embed.add_field(name="Server created at", value=f"{ctx.guild.created_at}")
+    embed=discord.Embed(title="BTC/INR", color=discord.Color.blue())
+    embed.set_author(name="PringlesBot")
+    embed.add_field(name="ASK", value=crypto["sell"], inline=True)
+    embed.add_field(name="BID", value=crypto["buy"], inline=True)
+    embed.add_field(name="Volume",value=crypto["volume"], inline=False)
+    embed.add_field(name="High(24Hr)", value=crypto["high"], inline=True)
+    embed.add_field(name="Low(24Hr)", value=crypto["low"], inline=True)
     await ctx.send(embed=embed)
 
 @client.command()
@@ -85,7 +91,7 @@ async def facekick(ctx):
         mention_avatar = client.user.avatar_url_as(format=None, static_format='png', size=64)
         meme = meme_output("facekick",user_avatar,mention_avatar)
         with open("imgs_temp/8lvi0.jpg",'rb') as fh:
-            f = discord.File(fh, filename = "8lvi0.jpg.jpg")
+            f = discord.File(fh, filename = "8lvi0.jpg")
         await ctx.send(file=f)
     else:
         for mention in mentions:
@@ -94,6 +100,64 @@ async def facekick(ctx):
             with open("imgs_temp/8lvi0.jpg",'rb') as fh:
                 f = discord.File(fh, filename = "8lvi0.jpg")
             await ctx.send(file=f)
+#Crypto
+
+@client.command()
+async def crypto(ctx):
+    crypto = crypto_output("btc")
+    embed=discord.Embed(title="Crypto Price", color=discord.Color.blue(), description="Enter $ followed by your crypto's short form Ex: $btc (for bitcoin)")
+    embed.add_field(name="Available For:", value="BTC,BAT,TRX,BTT")
+    embed.set_author(name="PringlesBot")
+    await ctx.send(embed=embed)
+
+@client.command()
+async def btc(ctx):
+    crypto = crypto_output("btc")
+    embed=discord.Embed(title="BTC/INR", color=discord.Color.blue())
+    embed.set_author(name="PringlesBot")
+    embed.add_field(name="ASK", value=crypto["sell"], inline=True)
+    embed.add_field(name="BID", value=crypto["buy"], inline=True)
+    embed.add_field(name="Volume",value=crypto["volume"], inline=False)
+    embed.add_field(name="High(24Hr)", value=crypto["high"], inline=True)
+    embed.add_field(name="Low(24Hr)", value=crypto["low"], inline=True)
+    await ctx.send(embed=embed)
+
+@client.command()
+async def bat(ctx):
+    crypto = crypto_output("bat")
+    embed=discord.Embed(title="BAT/INR", color=discord.Color.blue())
+    embed.set_author(name="PringlesBot")
+    embed.add_field(name="ASK", value=crypto["sell"], inline=True)
+    embed.add_field(name="BID", value=crypto["buy"], inline=True)
+    embed.add_field(name="Volume",value=crypto["volume"], inline=False)
+    embed.add_field(name="High(24Hr)", value=crypto["high"], inline=True)
+    embed.add_field(name="Low(24Hr)", value=crypto["low"], inline=True)
+    await ctx.send(embed=embed)
+
+@client.command()
+async def trx(ctx):
+    crypto = crypto_output("trx")
+    embed=discord.Embed(title="TRX/INR", color=discord.Color.blue())
+    embed.set_author(name="PringlesBot")
+    embed.add_field(name="ASK", value=crypto["sell"], inline=True)
+    embed.add_field(name="BID", value=crypto["buy"], inline=True)
+    embed.add_field(name="Volume",value=crypto["volume"], inline=False)
+    embed.add_field(name="High(24Hr)", value=crypto["high"], inline=True)
+    embed.add_field(name="Low(24Hr)", value=crypto["low"], inline=True)
+    await ctx.send(embed=embed)
+
+@client.command()
+async def btt(ctx):
+    crypto = crypto_output("btt")
+    embed=discord.Embed(title="BTT/INR", color=discord.Color.blue())
+    embed.set_author(name="PringlesBot")
+    embed.add_field(name="ASK(INR)", value=crypto["sell"], inline=True)
+    embed.add_field(name="BID", value=crypto["buy"], inline=True)
+    embed.add_field(name="Volume",value=crypto["volume"], inline=False)
+    embed.add_field(name="High(24Hr)", value=crypto["high"], inline=True)
+    embed.add_field(name="Low(24Hr)", value=crypto["low"], inline=True)
+    await ctx.send(embed=embed)
+
 '''
 @client.command()
 async def play(ctx, url_:str):
@@ -111,4 +175,5 @@ async deff leave(ctx):
         await ctx.send('Not connected')
 '''
 
-client.run(TOKEN)
+
+client.run("ODAxNDA4ODY4MTg5NDcwNzUw.YAgQKw.NqHpJxKtuoJ6k-YWrGYHida0Wp4")

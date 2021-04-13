@@ -36,9 +36,9 @@ def mixer_output(key,member_url,mention_url):
     dst = cv2.add(meme_template_bg,avatar_img_fg)
     meme_template[r2:r2+rows,r1:r1+cols] = dst
 
-    os.chdir(r"C:\Users\home\Documents\Projects\Discord\PringlesBot\imgs_temp")
+    os.chdir("/home/yuanb/Documents/Projects/discord_bot/imgs_temp")
     cv2.imwrite(image_file, meme_template)
-    os.chdir(r"C:\Users\home\Documents\Projects\Discord\PringlesBot")
+    os.chdir("/home/yuanb/Documents/Projects/discord_bot")
 
     #mention's image
     if mention_url:
@@ -62,9 +62,9 @@ def mixer_output(key,member_url,mention_url):
         dst = cv2.add(meme_template_bg,avatar_img_fg)
         meme_template[r4:r4+rows,r3:r3+cols] = dst
 
-        os.chdir(r"C:\Users\home\Documents\Projects\Discord\PringlesBot\imgs_temp")
+        os.chdir("/home/yuanb/Documents/Projects/discord_bot/imgs_temp")
         cv2.imwrite(image_file, meme_template)
-        os.chdir(r"C:\Users\home\Documents\Projects\Discord\PringlesBot")
+        os.chdir("/home/yuanb/Documents/Projects/discord_bot")
 
     '''cv2.imshow('image',meme_template)
     cv2.waitKey(0)
