@@ -176,4 +176,4 @@ async deff leave(ctx):
 '''
 
 
-client.run("ODAxNDA4ODY4MTg5NDcwNzUw.YAgQKw.NqHpJxKtuoJ6k-YWrGYHida0Wp4")
+client.run(TOKEN)
